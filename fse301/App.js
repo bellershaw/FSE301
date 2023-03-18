@@ -1,12 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button, Linking, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, Linking, Pressable, ScrollView } from 'react-native';
 
 const FONTSIZE = 20;
 let album_height = 500;
 
 export default function App() {
   return (
+    <ScrollView>
     <View style={styles.background}>
+      
       <StatusBar style="auto" />
       <Image source={require('./assets/boysaliarpt2albumart.jpg')} style={styles.albumImg} />
       <View style={styles.songBox}>
@@ -15,50 +17,50 @@ export default function App() {
         <View style={styles.songLink}>
           <Pressable  onPress={() => Linking.openURL('https://music.apple.com/us/album/boys-a-liar-pt-2/1664929598?i=1664929603')} 
             accessibilityLabel='Apple Music Link'
-            style={{textAlign: "center", width: "100%", backgroundColor: "pink"}}>
+            style={{textAlign: "center", width: "100%", marginTop: "30%", backgroundColor: "purple"}}>
                <Text style={styles.text}>Apple Music</Text>
           </Pressable>
           <Pressable onPress={() => Linking.openURL('https://open.spotify.com/album/6cVfHBcp3AdpYY0bBglkLN')} 
             title="Spotify" 
             accessibilityLabel='Spotify Link' 
-            style={{textAlign: "center", width: "100%", backgroundColor: "red"}}>
+            style={{textAlign: "center", width: "100%", backgroundColor: "green"}}>
               <Text style={styles.text}>Spotify</Text>
           </Pressable>  
           <Pressable onPress={() => Linking.openURL('https://soundcloud.com/pinkpantheress/boys-a-liar-pt-2')} 
             title="SoundCloud" 
             color="orange" 
             accessibilityLabel='SoundCloud Link'
-            style={{textAlign: "center", width: "100%", backgroundColor: "green"}}>
+            style={{textAlign: "center", width: "100%", backgroundColor: "orange"}}>
               <Text style={styles.text}>SoundCloud</Text>
           </Pressable>   
           <Pressable onPress={() => Linking.openURL('https://www.pandora.com/artist/pinkpantheress-and-ice-spice/boys-a-liar-pt-2/boys-a-liar-pt-2/TRxtKX2n5JKxh92')} 
             title="Pandora" 
             color="navy" 
             accessibilityLabel='Pandora Link'
-            style={{textAlign: "center", width: "100%", backgroundColor: "brown"}}>
+            style={{textAlign: "center", width: "100%", backgroundColor: "pink"}}>
               <Text style={styles.text}>Pandora</Text>
           </Pressable>  
           <Pressable onPress={() => Linking.openURL('https://music.youtube.com/playlist?list=OLAK5uy_lkwjSwkRu_uGVP6VoUajPArhmidjIoQXY')} 
             accessibilityLabel='YouTube Music Link'
-            style={{textAlign: "center", width: "100%", backgroundColor: "purple"}}>
+            style={{textAlign: "center", width: "100%", backgroundColor: "red"}}>
               <Text style={styles.text}>Youtube Music</Text>
           </Pressable>  
           <Pressable onPress={() => Linking.openURL('https://music.amazon.com/albums/B0BS74DNSS')} 
             accessibilityLabel='Amazon Music Link'
-            style={{textAlign: "center", width: "100%", backgroundColor: "blue"}}>
+            style={{textAlign: "center", width: "100%", backgroundColor: "tan"}}>
               <Text style={styles.text}>Amazon Music</Text>
           </Pressable> 
         </View>    
       </View>
-
     </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   background: {
-    flex: 1,
-    backgroundColor: 'blue',
+    //flex: 1,
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
     width: "100%",
@@ -67,14 +69,14 @@ const styles = StyleSheet.create({
   songBox: {
     width: "50%",
     height: "100%",
-    flex: 1,
-    backgroundColor: 'yellow',
+    //flex: 1,
+    backgroundColor: 'white',
     alignItems: 'left',
   },
   artist: {
     width: "80%",
     height: "100%",
-    flex: 1,
+    //flex: 1,
     backgroundColor: 'red',
   },
   text: {
@@ -90,7 +92,7 @@ const styles = StyleSheet.create({
   artist: {
     fontSize: FONTSIZE,
     fontWeight: 'bold',
-
+    opacity: "60%",
   },
   songLink: {
     fontSize: FONTSIZE,
